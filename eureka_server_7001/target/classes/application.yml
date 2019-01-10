@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: AIGOU-EUREKA
+
+server:
+  port: 7001
+
+eureka:
+  instance:
+    hostname: eureka-7001.com
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}  #这是单机的配置
+      #defaultZone: http://eureka-7002.com:7002/eureka/    #这是集群的配置，如果有多个就用逗号分隔，除了自己不配，其他的有多少个就要配多少个
+
+
+
+
